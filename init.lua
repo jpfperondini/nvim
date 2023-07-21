@@ -209,7 +209,7 @@ require('lazy').setup({
         },
       })
       require("telescope").load_extension("undo")
-      vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")  
+      vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
     end
   },
 
@@ -234,6 +234,14 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-context',
     },
     build = ':TSUpdate',
+  },
+
+  -- Git Blame
+  {
+    'APZelos/blamer.nvim',
+    config = function()
+      vim.keymap.set("n", "<leader>gt", "<cmd>BlamerToggle<cr>", { desc = "[G]it Lens [T]oggle" })
+    end
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -560,3 +568,4 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 vim.wo.relativenumber = true
+vim.wo.scrolloff = 10
