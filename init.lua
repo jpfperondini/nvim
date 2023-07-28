@@ -336,6 +336,7 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'telescope-live-grep-args.actions')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -568,4 +569,4 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 vim.wo.relativenumber = true
-vim.wo.scrolloff = 10
+vim.wo.scrolloff = 15
