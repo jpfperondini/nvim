@@ -155,24 +155,24 @@ require('lazy').setup({
 	},
 
 	-- tokyonight theme
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function()
-			vim.cmd.colorscheme 'tokyonight-night'
-		end
-	},
+	--[[ {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd.colorscheme 'tokyonight-night'
+    end
+  }, ]]
 
-	--{
-	-- Theme inspired by Atom
-	--'navarasu/onedark.nvim',
-	--priority = 1000,
-	--config = function()
-	--  vim.cmd.colorscheme 'onedark'
-	--end,
-	--},
+	{
+		-- Theme inspired by Atom
+		'navarasu/onedark.nvim',
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme 'onedark'
+		end,
+	},
 
 	{
 		-- Set lualine as statusline
@@ -490,7 +490,7 @@ local on_attach = function(_, bufnr)
 		vim.lsp.buf.format()
 	end, { desc = 'Format current buffer with LSP' })
 
-	nmap('<leader>cf', vim.lsp.buf.format(), '[C]ode [F]ormat')
+	nmap('<leader>cf', vim.lsp.buf.format, '[C]ode [F]ormat')
 end
 
 -- Enable the following language servers
@@ -590,4 +590,3 @@ cmp.setup {
 
 vim.wo.relativenumber = true
 vim.wo.scrolloff = 15
-
