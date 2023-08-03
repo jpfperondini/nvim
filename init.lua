@@ -600,3 +600,5 @@ cmp.setup {
 vim.wo.relativenumber = true
 vim.wo.scrolloff = 15
 
+-- cht.sh
+vim.keymap.set('n', '<leader>h', "<cmd>silent !tmux neww cht<CR>", { desc = 'Show C[h]eatsheet' })
