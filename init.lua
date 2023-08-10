@@ -296,6 +296,8 @@ vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.o.wrap = true
+vim.o.linebreak = true
 
 -- Save undo history
 vim.o.undofile = true
@@ -590,3 +592,4 @@ cmp.setup {
 
 vim.wo.relativenumber = true
 vim.wo.scrolloff = 15
+
