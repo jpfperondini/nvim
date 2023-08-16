@@ -155,31 +155,30 @@ require('lazy').setup({
 	},
 
 	-- tokyonight theme
-	--[[ {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      vim.cmd.colorscheme 'tokyonight-night'
-    end
-  }, ]]
-
 	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			vim.cmd.colorscheme 'tokyonight-night'
+		end
+	},
+
+	--[[ {
 		-- Theme inspired by Atom
 		'navarasu/onedark.nvim',
 		priority = 1000,
 		config = function()
-      require('onedark').setup {
-        style = 'warmer',
-        colors = {
-          bg0 = "#0A0A0A"
-        }
-      }
+			require('onedark').setup {
+				style = 'warmer',
+				colors = {
+					bg0 = "#0A0A0A"
+				}
+			}
 			vim.cmd.colorscheme 'onedark'
- 
 		end,
-	},
+	}, ]]
 
 	{
 		-- Set lualine as statusline
@@ -188,7 +187,7 @@ require('lazy').setup({
 		opts = {
 			options = {
 				icons_enabled = false,
-				theme = 'onedark',
+				theme = 'tokyonight',
 				component_separators = '|',
 				section_separators = '',
 			},
