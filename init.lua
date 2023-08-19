@@ -518,7 +518,7 @@ local servers = {
 
 	lua_ls = {
 		Lua = {
-			workspace = { checkThirdParty = true },
+			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
 		},
 	},
