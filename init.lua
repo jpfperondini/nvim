@@ -279,6 +279,9 @@ require('lazy').setup({
 		dependencies = {
 			'mfussenegger/nvim-dap'
 		}
+	},
+	{
+		'ThePrimeagen/harpoon'
 	}
 }, {})
 
@@ -600,4 +603,13 @@ vim.wo.relativenumber = true
 vim.wo.scrolloff = 15
 
 -- cht.sh
-vim.keymap.set('n', '<leader>h', "<cmd>silent !tmux neww cht<CR>", { desc = 'Show C[h]eatsheet' })
+vim.keymap.set('n', '<leader>hh', "<cmd>silent !tmux neww cht<CR>", { desc = 'Show C[h]eatsheet' })
+
+-- Harpoon
+vim.keymap.set('n', '<leader>ho', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', { desc = '[H]arpoon T[o]ggle UI'})
+
+for i=0,9 do
+vim.keymap.set('n', '<leader>h' .. i, '<cmd>lua require("harpoon.ui").nav_file(' .. i .. ')<CR>', { desc = '[H]arpoon open file at ' .. i })
+vim.keymap.set('n', '<leader>ha' .. i, '<cmd>lua require("harpoon.mark").set_current_at(' .. i .. ')<CR>', { desc = '[H]arpoon [a]dd file to ' .. i})
+end
+
